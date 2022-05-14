@@ -23,7 +23,7 @@ function loadStuff(data) {
     document.getElementById('online').innerText = players.online;
     document.getElementById('max').innerText = players.max;
     document.getElementById('version').innerText = data.version;
-    document.getElementById('seed').innerText = data.world.seed;
+    document.getElementById('seed').innerText = BigInt(data.world.seed);
 
     var playerList = players.list;
 
@@ -90,10 +90,6 @@ function addPlayer(player, discordInfo) {
     var uuid = document.createElement('p');
     uuid.innerHTML = player.id;
     box.appendChild(uuid);
-
-    box.onclick = function () {
-        window.location = "lookup/?username=" + player.name;
-    };
 
     li.appendChild(box);
     list.appendChild(li);
