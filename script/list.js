@@ -3,7 +3,7 @@ var i = 0;
 
 function loadList() {
     fetch(
-        "https://api.commandosmp.pequla.one/api/status"
+        "https://api.pequla.one/commando/status"
     ).then(
         rsp => rsp.json()
     ).then(
@@ -40,7 +40,7 @@ function loadStuff(data) {
 function loadPlayers(playerList) {
     playerList.forEach(player => {
         fetch(
-            "https://api.commandosmp.pequla.one/api/user?uuid=" + player.id
+            "https://api.pequla.one/commando/user?uuid=" + player.id
         ).then(
             rsp => rsp.json()
         ).then(
